@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<style>
+    #container {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background: black;
+    }
+
+    #animate {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-color: whitesmoke;
+    }
+</style>
+<body>
+
+    <p><button onclick="myMove()">Click to move the little white square!</button></p>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 90) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+<div class="text-center">
+    <h1 class="display-4">One of my favorite song videos!</h1>
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/09R8_2nJtjg" frameborder="0" allow="accelerometer;
+               autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+</div>
+
+
+
+
+
+
+
